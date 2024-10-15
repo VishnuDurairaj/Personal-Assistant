@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  jupyter_service:
+    build: services/
+    image: jupyter_service:latest
+    container_name: jupyter_service_container
+    volumes:
+      - .:/jupyternotebook
+      - work_dir:/work_dir
+    ports:
+      - "9999:9999"
+    networks:
+      - app_network
+
+  kavish_assistant:
+    build: .
+    image: kavish_assistant:latest
+    container_name: kavish_assistant_container
+    volumes:
+      - .:/app
+      - work_dir:/work_dir
+    ports:
+      - "8088:8088"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - JUPYTER_URL=jupyter_service:9999
+    tty: true 
+    stdin_open: true
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9999/health"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+    networks:
+      - app_network
+
+volumes:
+  work_dir:
+
+networks:
+  app_network:
+    driver: bridge
