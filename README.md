@@ -10,15 +10,23 @@ Kavish is an AI assistant designed to help manage important information and exec
 - **Delete Information**: Remove specific data from the database after confirmation.
 - **Execute Python Code**: Run Python scripts in a stateful Jupyter notebook environment and return the results.
 
-## Usage
+### **How to Run the Project**
 
-1. **Clone the repository**:
+### **1.Clone the Repository:**
+
 ```bash
-   git clone https://github.com/your-repo/kavish.git
+git clone https://github.com/VishnuDurairaj/Robust-SQL-Copilot.git
+cd Robust-SQL-Copilot
 ```
 
-2. **Run Using Docker**:
 ```bash
-docker-compose up -d
-
+git clone https://github.com/VishnuDurairaj/Robust-SQL-Copilot.git
+cd Robust-SQL-Copilot
 ```
+
+### **2.Run the Services with Docker Compose:**
+```bash
+docker-compose up
+```
+
+Access the Interface: Open your browser and go to http://localhost:8080 to start interacting with Assistant.
