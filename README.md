@@ -15,13 +15,8 @@ Kavish is an AI assistant designed to help manage important information and exec
 ### **1.Clone the Repository:**
 
 ```bash
-git clone https://github.com/VishnuDurairaj/Robust-SQL-Copilot.git
-cd Robust-SQL-Copilot
-```
-
-```bash
-git clone https://github.com/VishnuDurairaj/Robust-SQL-Copilot.git
-cd Robust-SQL-Copilot
+git clone https://github.com/VishnuDurairaj/Personal-Assistant.git
+cd Personal-Assistant
 ```
 
 ### **2.Run the Services with Docker Compose:**
